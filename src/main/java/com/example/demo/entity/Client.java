@@ -1,6 +1,7 @@
 package com.example.demo.entity;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 /**
  * Created by Alexandre on 09/04/2018.
@@ -17,6 +18,11 @@ public class Client {
 
     @Column
     private String nom;
+
+    @Column
+    private LocalDate dateNaissance;
+    @Column
+    private String age;
 
     public Long getId() {
         return id;
@@ -41,4 +47,14 @@ public class Client {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    public LocalDate getDateNaissance() {
+        return dateNaissance;
+    }
+
+    public void setDateNaissance(LocalDate date) { this.dateNaissance = date;}
+
+    public String getAge() { return age; }
+
+    public void setAge(String age) { this.age = age;}
 }

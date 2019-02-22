@@ -15,15 +15,21 @@ import java.util.List;
 @Controller
 public class HomeController {
 
+    //permet d'aller chercher l'instance
     @Autowired
     private ClientService clientService;
 
+   // @Autowired
+//    private FactureService factureService;
+
     @GetMapping("/")
     public ModelAndView home() {
+        //nom du template
         ModelAndView modelAndView = new ModelAndView("home");
 
         List<Client> clients = clientService.findAllClients();
         modelAndView.addObject("clients", clients);
+        //on appel la liste des des clients pour afficher leurs données
 
         return modelAndView;
     }
